@@ -1,23 +1,20 @@
 "use strict";
 
 // ___________________1Item____________
-// let user = {
-//     name:"Andrey",
-//     am:undefined,
-//     age:19,
-// };
+let user = {
+    name:"Andrey",
+    am:undefined,
+    age:null,
+};
 
 // const isPlainObject = value => value.constructor === Object;
 // console.log(isPlainObject(user))
 
 // ___________________2Item____________
 
-// let check_for_emptiness = (value) =>{
-//     if (Object.keys(value).length !== 0){
-//         for (let i in value){
-//             if (value[i] !== undefined || null) return "Объект не пуст";
-//         }
-//     }
-//     return "Объект пуст!"
-// }
-// console.log(check_for_emptiness(user))
+let check_for_emptiness = (value) =>{
+    return ((Object.entries(value).map(item => item[1] !== undefined && item[1] !== null)).includes(false) ?
+            "Объект не Пуст":"Объект Пустой!"
+    )
+}
+console.log(check_for_emptiness(user))
